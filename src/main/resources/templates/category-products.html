@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Category Products</title>
+</head>
+<body>
+<h1 th:text="${category.name}"></h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description}"></td>
+    </tr>
+</table>
+<a href="/categories">Back to Categories</a>
+</body>
+</html>

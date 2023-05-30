@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Delete Category</title>
+</head>
+<body>
+<h1>Delete Category</h1>
+<p>Are you sure you want to delete this category?</p>
+<form th:action="@{/categories/{id}/delete(id=${category.id})}" method="post">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

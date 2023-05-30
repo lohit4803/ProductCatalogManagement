@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Categories</title>
+</head>
+<body>
+<h1>Categories</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+        <td>
+            <a th:href="@{/categories/{id}/edit(id=${category.id})}">Edit</a>
+            <a th:href="@{/categories/{id}/delete(id=${category.id})}" onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
+            <a th:href="@{/categories/{id}/products(id=${category.id})}">View Products</a>
+        </td>
+    </tr>
+</table>
+<a href="/categories/add">Add Category</a>
+<a href="/products/add">Add Product</a>
+</body>
+</html>
